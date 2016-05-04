@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:26:10 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:51:17 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/04 18:07:05 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,30 @@
 # define BG2_COLOR 0x2D2D2D
 # define UI_COLOR 0x84AC00
 # define UI2_COLOR 0x647C15
+# define OBJ_COLOR 0x777777
+# define OBJ2_COLOR 0x373737
 # define MIN_V 105
+# define MAX_V 360
 # define WIN_W 1280
 # define WIN_H 720
 
-# define MSG00 "usage: ./fractol fractal_name"
+# define MSG00 "usage: ./polygons number_of_sides"
 # define MSG01 "error: Window size must be greater than 1024 x 576"
-# define MSG03 " isn't a valid fractal name\n"
+# define MSG02 "error : the number of sides as to be a value between 1 and 360"
 
 typedef struct	s_var
 {
 	int			x;
 	int			y;
+	double		cx;
+	double		cy;
 	int			sl;
 	int			len;
 	int			nbr;
+	int			num;
 	int			bpp;
 	int			end;
+	int			rad;
 	char		*d;
 	char		*nam;
 	char		**ftl;
@@ -57,6 +64,10 @@ void			user_interface_texts(t_var *v);
 
 void			mlx_draw(t_var *v, int x, int y);
 
-char            *dispatch_num(int num);
+char			*dispatch_num(int num);
+
+void			draw_line(t_var *v, int x, int y);
+void			draw_circle(t_var *v, int radius);
+void			draw_polygon(t_var *v, int radius);
 
 #endif

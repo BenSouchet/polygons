@@ -6,7 +6,7 @@
 #    By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 18:49:05 by bsouchet          #+#    #+#              #
-#    Updated: 2016/05/02 18:48:41 by bsouchet         ###   ########.fr        #
+#    Updated: 2016/05/04 13:28:59 by bsouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ HEADERS = includes
 SOURCES = main.c \
 		  hook.c \
 		  draw.c \
+		  name.c \
 		  misc.c
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))

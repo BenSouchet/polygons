@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:35:58 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:49:15 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/04 17:51:30 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 int				expose_hook(t_var *v)
 {
+	int rad_circle;
+	int rad_polygon;
+
+	rad_circle = v->rad;
+	rad_polygon = v->rad;
 	v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	v = user_interface(v, 1);
-	/*mettre le taf*/
+	while (rad_circle >= (v->rad - 5))
+		draw_circle(v, rad_circle--);
+	while (rad_polygon >= (v->rad - 5))
+		draw_polygon(v, rad_polygon--);
 	v = user_interface(v, 2);
 	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
 	user_interface_texts(v);
@@ -34,6 +42,16 @@ int				key_hook(int keycode, t_var *v)
 	}
 	else
 	{
+		if (keycode == 69)
+			v->rad += 10;
+		else if (keycode == 78 && v->rad > 30)
+			v->rad -= 10;
+		else if (keycode == 121 && v->num < 360)
+			v->num++;
+		else if (keycode == 71 && (v->rad = 280) == 280)
+			v->num = (v->nbr == 2) ? ft_atoi(v->ftl[1], 0) : 1;
+		else if (keycode == 116 && v->num > 1)
+			v->num--;
 		/*if (keycode >= 0 && keycode < 80)
 			v = key_hook_rotate(v, keycode);
 		else if (keycode > 110 && keycode < 130)

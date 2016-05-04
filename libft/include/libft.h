@@ -6,7 +6,7 @@
 /*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 17:48:33 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/04 10:39:22 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int				ft_abs(int n);
 
-int				ft_atoi(char *str, int *k, int r, int s);
+int				ft_atoi(char *str, int i);
 
 void			*ft_memalloc(size_t size);
 void			*ft_memset(void *b, int c, size_t len);

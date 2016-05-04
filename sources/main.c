@@ -6,48 +6,48 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:30:09 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/02 18:35:51 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/04 18:06:36 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "polygons.h"
 #include <stdio.h>
 
-int		error(int type)
+static int		error(int type)
 {
 	if (type == 0)
-		write(2, MSG00, 29);
+		write(2, MSG00, 33);
 	else if (type == 1)
 		write(2, MSG01, 51);
 	else if (type == 2)
-		;
+		write(2, MSG02, 62);
 	write(2, "\n", 1);
 	return (-1);
 }
 
-int		check(t_var v, int err)
+static int		check(t_var *v, int err)
 {
-	char	*str;
-
-	if (ft_strcmp(v.ftl[1], "Julia") != 0 &&
-		ft_strcmp(v.ftl[1], "julia") != 0 &&
-		ft_strcmp(v.ftl[1], "Mandelbrot") != 0 &&
-		ft_strcmp(v.ftl[1], "mandelbrot") != 0 &&
-		ft_strcmp(v.ftl[1], "Troisieme") != 0 &&
-		ft_strcmp(v.ftl[1], "troisieme") != 0)
-	{
-		str = ft_strjoin(ft_strjoin("error : ", v.ftl[1]), MSG03);
-		write(2, str, ft_strlen(str));
-		err++;
-	}
+	v->rad = 280;
+	v->cx = (213.0 + ((WIN_W - 213.0) / 2.0));
+	v->cy = (35.0 + ((WIN_H - 116.0) / 2.0));
+	if (v->nbr == 1 || (v->nbr == 2 && ft_atoi(v->ftl[1], 0) > 0 &&
+		ft_atoi(v->ftl[1], 0) < 361))
+		;
+	else if (v->nbr == 2 && (v->ftl[1][0] < 48 || v->ftl[1][0] > 57)
+		&& ++err > 0)
+		error(0);
+	else if (++err > 0)
+		error(2);
 	return (err);
 }
 
 static int		init_win(t_var v)
 {
 	v.mlx = mlx_init();
+	if (v.nbr > 1)
+		v.num = ft_atoi(v.ftl[1], 0);
 	v.img = mlx_new_image(v.mlx, WIN_W, WIN_H);
-	v.win = mlx_new_window(v.mlx, -1, -1, WIN_W, WIN_H, "ngones - bsouchet");
+	v.win = mlx_new_window(v.mlx, -1, -1, WIN_W, WIN_H, "polygons - bsouchet");
 	v.d = mlx_get_data_addr(v.img, &v.bpp, &v.sl, &v.end);
 	mlx_expose_hook(v.win, expose_hook, &v);
 	mlx_hook(v.win, 17, 0, close_hook, &v);
@@ -58,21 +58,18 @@ static int		init_win(t_var v)
 	return (0);
 }
 
-int		main(int ac, char **av)
+int				main(int ac, char **av)
 {
-    int i;
 	t_var v;
 
-    i = 0;
+	v.num = 1;
 	v.nbr = ac;
 	v.ftl = av;
-    while (++i <= 100)
-        printf("%s\n", dispatch_num(i));
-	if (ac != 2)
+	if (ac > 2)
 		return (error(0));
 	else if (WIN_W < 1024 || WIN_H < 576)
 		return (error(1));
-	else if (check(v, 0) > 0)
+	else if (check(&v, 0) > 0)
 		return (-1);
 	else
 		init_win(v);

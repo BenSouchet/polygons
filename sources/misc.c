@@ -1,106 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   misc.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/05/04 18:03:16 by bsouchet          #+#    #+#             */
+/*   Updated: 2016/05/04 18:04:37 by bsouchet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "polygons.h"
 
-char *machin_sup_simple(char *num, char *str, int i)
+void	draw_circle(t_var *v, int radius)
 {
-    if (num[i] == '0')
-        str = ft_strjoin(str, "gon");
-    else if (num[i] == '1')
-        str = ft_strjoin(str, "henagon");
-    else if (num[i] == '2')
-        str = ft_strjoin(str, "digon");
-    else if (num[i] == '3')
-        str = ft_strjoin(str, "trigon");
-    else if (num[i] == '4')
-        str = ft_strjoin(str, "tretragon");
-    else if (num[i] == '5')
-        str = ft_strjoin(str, "pentagon");
-    else if (num[i] == '6')
-        str = ft_strjoin(str, "hexagon");
-    else if (num[i] == '7')
-        str = ft_strjoin(str, "heptagon");
-    else if (num[i] == '8')
-        str = ft_strjoin(str, "octagon");
-    else if (num[i] == '9')
-        str = ft_strjoin(str, "enneagon");
-    return (str);
+	double x;
+	double y;
+	double degree;
+
+	degree = 0.0f;
+	x = v->cx;
+	y = v->cy - radius;
+	while (degree <= 360.0)
+	{
+		v->x = cos(degree * (PI / 180.0f)) * (x - v->cx) -
+		sin(degree * (PI / 180.0f)) * (y - v->cy) + v->cx;
+		v->y = sin(degree * (PI / 180.0f)) * (x - v->cx) +
+		cos(degree * (PI / 180.0f)) * (y - v->cy) + v->cy;
+		put_pixel(v, OBJ2_COLOR, 1);
+		degree += 0.1;
+	}
 }
 
-char *machin_sup_double(char *num, char *str, int i)
+void	draw_polygon(t_var *v, int radius)
 {
-    if (num[i] == '1')
-        str = ft_strjoin(str, "deca");
-    else if (num[i] == '2')
-        str = ft_strjoin(str, "icosi");
-    else if (num[i] == '3')
-        str = ft_strjoin(str, "triaconta");
-    else if (num[i] == '4')
-        str = ft_strjoin(str, "tetraconta");
-    else if (num[i] == '5')
-        str = ft_strjoin(str, "pentaconta");
-    else if (num[i] == '6')
-        str = ft_strjoin(str, "hexaconta");
-    else if (num[i] == '7')
-        str = ft_strjoin(str, "heptaconta");
-    else if (num[i] == '8')
-        str = ft_strjoin(str, "octaconta");
-    else if (num[i] == '9')
-        str = ft_strjoin(str, "enneaconta");
-    if (num[i + 1] != '0')
-        str = ft_strjoin(str, "kai");
-    return (machin_sup_simple(num, str, ++i));
-}
+	int		count;
+	int		max;
+	double	x;
+	double	y;
+	double	tmp_x;
+	double	tmp_y;
+	double	tmp2_x;
+	double	tmp2_y;
+	double	angle;
+	double	total;
 
-char *machin_sup_triple(char *num, char *str, int i)
-{
-    if (num[i] == '1')
-        str = ft_strjoin(str, "hecta");
-    else if (num[i] == '2')
-        str = ft_strjoin(str, "dihecta");
-    else if (num[i] == '3')
-        str = ft_strjoin(str, "trihecta");
-    else if (num[i] == '4')
-        str = ft_strjoin(str, "tetrahecta");
-    else if (num[i] == '5')
-        str = ft_strjoin(str, "pentahecta");
-    else if (num[i] == '6')
-        str = ft_strjoin(str, "hexahecta");
-    else if (num[i] == '7')
-        str = ft_strjoin(str, "heptahecta");
-    else if (num[i] == '8')
-        str = ft_strjoin(str, "octahecta");
-    else if (num[i] == '9')
-        str = ft_strjoin(str, "enneahecta");
-    return (machin_sup_double(num, str, ++i));
-}
-
-char    *machin_basic(int num, char *str)
-{
-    str = (num == 11) ? ft_strjoin(str, "hendecagon") : str;
-    str = (num == 12) ? ft_strjoin(str, "dodecagon") : str;
-    str = (num == 13) ? ft_strjoin(str, "Tridecagon") : str;
-    str = (num == 14) ? ft_strjoin(str, "tetradecagon") : str;
-    str = (num == 15) ? ft_strjoin(str, "pentadecagon") : str;
-    str = (num == 16) ? ft_strjoin(str, "hexadecagon") : str;
-    str = (num == 17) ? ft_strjoin(str, "heptadecagon") : str;
-    str = (num == 18) ? ft_strjoin(str, "octadecagon") : str;
-    str = (num == 19) ? ft_strjoin(str, "enneadecagon") : str;
-    str = (num == 20) ? ft_strjoin(str, "icosagon") : str;
-    str = (num == 100) ? ft_strjoin(str, "hectogon") : str;
-    return (str);
-}
-
-char    *dispatch_num(int num)
-{
-    char *str;
-
-    str = (char *)malloc(sizeof(char) * 1);
-    if ((num > 10 && num <= 20) || num == 100)
-        return (machin_basic(num, str));
-    else if (num > 99)
-        return (machin_sup_triple(ft_itoa(num), str, 0));
-    else if (num == 10 || num > 20)
-        return (machin_sup_double(ft_itoa(num), str, 0));
-    else if (num > 0)
-        return (machin_sup_simple(ft_itoa(num), str, 0));
-    return (str);
+	count = 0;
+	max = (v->num < 3) ? 3600 : v->num;
+	x = v->cx;
+	y = v->cy - (radius - 14);
+	total = 0.0;
+	angle = (v->num < 3) ? 0.1 : 360.0 / (double)v->num;
+	if (!(v->num % 2))
+	{
+		v->x = cos((angle / 2.0) * (PI / 180.0f)) * (x - v->cx) -
+		sin((angle / 2.0) * (PI / 180.0f)) * (y - v->cy) + v->cx;
+		v->y = sin((angle / 2.0) * (PI / 180.0f)) * (x - v->cx) +
+		cos((angle / 2.0) * (PI / 180.0f)) * (y - v->cy) + v->cy;
+		x = v->x;
+		y = v->y;
+	}
+	tmp_x = x;
+	tmp_y = y;
+	while (count++ <= max)
+	{
+		v->x = cos(total * (PI / 180.0f)) * (x - v->cx) -
+		sin(total * (PI / 180.0f)) * (y - v->cy) + v->cx;
+		v->y = sin(total * (PI / 180.0f)) * (x - v->cx) +
+		cos(total * (PI / 180.0f)) * (y - v->cy) + v->cy;
+		tmp2_x = v->x;
+		tmp2_y = v->y;
+		draw_line(v, tmp_x, tmp_y);
+		total += angle;
+		tmp_x = tmp2_x;
+		tmp_y = tmp2_y;
+	}
 }
