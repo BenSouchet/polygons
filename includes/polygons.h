@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:26:10 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/04 18:07:05 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/05 19:17:31 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ char			*dispatch_num(int num);
 void			draw_line(t_var *v, int x, int y);
 void			draw_circle(t_var *v, int radius);
 void			draw_polygon(t_var *v, int radius);
+int				draw_new_algo(t_var *v, int radius);
 
 #endif
