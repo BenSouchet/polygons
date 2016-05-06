@@ -22,7 +22,7 @@ int				expose_hook(t_var *v)
 	v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	v = user_interface(v, 1);
-	draw_new_algo(v, v->rad);
+	draw_polygon(v, v->rad);
 	/*while (rad_circle >= (v->rad - 5))
 		draw_circle(v, rad_circle--);
 	while (rad_polygon >= (v->rad - 5))
