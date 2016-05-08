@@ -14,19 +14,11 @@
 
 int				expose_hook(t_var *v)
 {
-	int rad_circle;
-	int rad_polygon;
-
-	rad_circle = v->rad;
-	rad_polygon = v->rad;
+    v->rot = (v->num % 2) ? -90.0 : 0.0;
 	v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	v = user_interface(v, 1);
-	draw_polygon(v, v->rad);
-	/*while (rad_circle >= (v->rad - 5))
-		draw_circle(v, rad_circle--);
-	while (rad_polygon >= (v->rad - 5))
-		draw_polygon(v, rad_polygon--);*/
+	draw_polygon(v);
 	v = user_interface(v, 2);
 	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
 	user_interface_texts(v);
@@ -50,9 +42,17 @@ int				key_hook(int keycode, t_var *v)
 		else if (keycode == 121 && v->num < 360)
 			v->num++;
 		else if (keycode == 71 && (v->rad = 280) == 280)
-			v->num = (v->nbr == 2) ? ft_atoi(v->ftl[1], 0) : 1;
+			v->num = (v->nbr == 2) ? ft_atoi(v->ftl[1]) : 1;
 		else if (keycode == 116 && v->num > 1)
 			v->num--;
+        else if (keycode == 123 && v->width > -100)
+            v->width -= 5;
+        else if (keycode == 124)
+            v->width += 5;
+        else if (keycode == 125 && v->height > -100)
+            v->height -= 5;
+        else if (keycode == 126)
+            v->height += 5;
 		/*if (keycode >= 0 && keycode < 80)
 			v = key_hook_rotate(v, keycode);
 		else if (keycode > 110 && keycode < 130)

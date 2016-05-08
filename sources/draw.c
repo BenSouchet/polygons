@@ -101,6 +101,7 @@ void	user_interface_texts(t_var *v)
 	else
 		mlx_string_put(v->mlx, v->win, 37, 349, UI2_COLOR, "Next = PAGE DW");
 	mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);
+    free(v->nam);
 	mlx_string_put(v->mlx, v->win, 37, (WIN_H - 55), UI_COLOR,
 	ft_strjoin("Sides : ", ft_itoa(v->num)));
 }

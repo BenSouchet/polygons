@@ -11,37 +11,25 @@
 /* ************************************************************************** */
 
 #include "polygons.h"
-#include <stdio.h>
-
-/*int     point_in_polygon(t_var *v, int i, int r)
-{
-    int j;
-
-    j = v->num - 1;
-    while (i < v->num)
-    {
-        if (((v->pts[i][1] >= v->y) != (v->pts[j][1] >= v->y)) &&
-        (v->x <= (v->pts[j][0] - v->pts[i][0]) * (v->y - v->pts[i][1]) /
-        (v->pts[j][1] - v->pts[i][1]) + v->pts[i][0]))
-            r = 1;
-        j = i++;
-    }
-    return (r);
-}*/
 
 static int     check_point(t_var *v)
 {
-    int i, j, c = 0;
-    for (i = 0, j = v->num-1; i < v->num; j = i++) {
-    if (((v->pts[i][1] >= v->y) != (v->pts[j][1] >= v->y)) &
-    (v->x <= (v->pts[j][0] - v->pts[i][0]) * (float)(v->y - v->pts[i][1]) /
-    (float)(v->pts[j][1] - v->pts[i][1]) + v->pts[i][0]))
-        c = !c;
+    int i;
+    int j;
+    int c;
+
+    c = 0;
+    for (i = 0, j = v->num-1; i < v->num; j = i++)
+    {
+        if (((v->pts[i][1] >= v->y) != (v->pts[j][1] >= v->y)) &
+        (v->x <= (v->pts[j][0] - v->pts[i][0]) * (float)(v->y - v->pts[i][1]) /
+        (float)(v->pts[j][1] - v->pts[i][1]) + v->pts[i][0]))
+            c = !c;
     }
     return c;
 }
 
-static void     get_vertex(t_var *v, int radius, int i)
+static void     get_vertex(t_var *v, int i)
 {
     double x;
     double y;
@@ -58,26 +46,42 @@ static void     get_vertex(t_var *v, int radius, int i)
         y = sinf(a) * (cosf(PI / v->num) / cosf(2.0 * (PI / v->num) *
         ((a / (2.0 * (PI / v->num))) - floor(a / (2.0 * (PI / v->num)))) -
         (PI / v->num)));
-        v->pts[i][0] = (round((radius) * x) + (v->cx));
-        v->pts[i++][1] = (round((radius) * y) + (v->cy));
+        v->pts[i][0] = (round((v->rad) * x) + (v->cx));
+        v->pts[i++][1] = (round((v->rad) * y) + (v->cy));
         a += god;
     }
 }
 
-void            draw_polygon(t_var *v, int radius)
+void            apply_transforms(t_var *v, int i)
+{
+    double  x_new;
+    double  y_new;
+
+    x_new = cos(v->rot * (PI / 180.0)) * (v->pts[i][0] - v->cx) -
+    sin(v->rot * (PI / 180.0)) * (v->pts[i][1] - v->cy) + v->cx;
+    y_new = sin(v->rot * (PI / 180.0)) * (v->pts[i][0] - v->cx) +
+    cos(v->rot * (PI / 180.0)) * (v->pts[i][1] - v->cy) + v->cy;
+    v->pts[i][0] = x_new + (v->width * (x_new - v->cx) / 100);
+    v->pts[i][1] = y_new + (v->height * (y_new - v->cy) / 100);
+}
+
+void            draw_polygon(t_var *v)
 {
     int i;
 
-    i = 0;
-    v->y = v->cy - radius - 1;
+    i = -1;
+    v->y = 0;
     v->pts = (int **)malloc(sizeof(int *) * v->num);
     while (i < v->num)
         v->pts[i++] = (int *)malloc(sizeof(int) * 2);
-    get_vertex(v, radius, 0);
-    while (++v->y <= (v->cy + radius))
+    get_vertex(v, 0);
+    i = -1;
+    while (++i < v->num)
+        apply_transforms(v, i);
+    while (++v->y <= WIN_H - 1)
     {
-        v->x = v->cx - radius - 1;
-        while (++v->x <= (v->cx + radius))
+        v->x = 213;
+        while (++v->x <= WIN_W - 1)
             if (check_point(v) == 1)
                 put_pixel(v, OBJ_COLOR, 0);
     }

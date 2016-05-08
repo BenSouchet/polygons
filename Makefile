@@ -14,7 +14,7 @@ C = clang
 
 NAME = polygons
 
-FLAGS = -Wall -Wextra -Werror -O3
+FLAGS = -g
 
 LIBFT = libft
 

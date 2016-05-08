@@ -22,7 +22,7 @@
 
 int				ft_abs(int n);
 
-int				ft_atoi(char *str, int i);
+int				ft_atoi(char *str);
 
 void			*ft_memalloc(size_t size);
 void			*ft_memset(void *b, int c, size_t len);

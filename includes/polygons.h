@@ -46,6 +46,9 @@ typedef struct	s_var
 	int			bpp;
 	int			end;
 	int			rad;
+    double      rot;
+    double      width;
+    double      height;
     int         **pts;
 	char		*d;
 	char		*nam;
@@ -68,8 +71,6 @@ void			mlx_draw(t_var *v, int x, int y);
 char			*dispatch_num(int num);
 
 void			draw_line(t_var *v, int x, int y);
-void			draw_polygon(t_var *v, int radius);
-
-int				draw_new_algo(t_var *v, int radius, int i);
+void			draw_polygon(t_var *v);
 
 #endif

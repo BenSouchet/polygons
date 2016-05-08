@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "polygons.h"
-#include <stdio.h>
 
 static int		error(int type)
 {
@@ -28,10 +27,12 @@ static int		error(int type)
 static int		check(t_var *v, int err)
 {
 	v->rad = 280;
+    v->width = 0;
+    v->height = 0;
 	v->cx = (213.0 + ((WIN_W - 213.0) / 2.0));
 	v->cy = (35.0 + ((WIN_H - 116.0) / 2.0));
-	if (v->nbr == 1 || (v->nbr == 2 && ft_atoi(v->ftl[1], 0) > 0 &&
-		ft_atoi(v->ftl[1], 0) < 361))
+	if (v->nbr == 1 || (v->nbr == 2 && ft_atoi(v->ftl[1]) > 0 &&
+		ft_atoi(v->ftl[1]) < 361))
 		;
 	else if (v->nbr == 2 && (v->ftl[1][0] < 48 || v->ftl[1][0] > 57)
 		&& ++err > 0)
@@ -44,9 +45,8 @@ static int		check(t_var *v, int err)
 static int		init_win(t_var v)
 {
 	v.mlx = mlx_init();
-	if (v.nbr > 1)
-		v.num = ft_atoi(v.ftl[1], 0);
-	v.img = mlx_new_image(v.mlx, WIN_W, WIN_H);
+	v.num = (v.nbr == 2) ? ft_atoi(v.ftl[1]) : 1;
+    v.img = mlx_new_image(v.mlx, WIN_W, WIN_H);
 	v.win = mlx_new_window(v.mlx, -1, -1, WIN_W, WIN_H, "polygons - bsouchet");
 	v.d = mlx_get_data_addr(v.img, &v.bpp, &v.sl, &v.end);
 	mlx_expose_hook(v.win, expose_hook, &v);

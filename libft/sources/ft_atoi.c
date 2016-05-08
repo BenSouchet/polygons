@@ -12,12 +12,14 @@
 
 #include "libft.h"
 
-int		ft_atoi(char *str, int i)
+int		ft_atoi(char *str)
 {
+    int i;
 	int r;
 
+    i = 0;
 	r = 0;
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (str[i] != 0 && str[i] >= '0' && str[i] <= '9')
 		r = r * 10 + str[i++] - '0';
 	return (r);
 }
