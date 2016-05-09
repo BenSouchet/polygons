@@ -35,7 +35,15 @@ int				key_hook(int keycode, t_var *v)
 	}
 	else
 	{
-		if (keycode == 69)
+        if (keycode == 0 && (v->num % 2) == 0 && v->odd > (v->rad / 20))
+            v->odd -= (v->rad / 20);
+        else if (keycode == 1 && (v->num % 2) == 0 && v->even > (v->rad / 20))
+            v->even -= (v->rad / 20);
+        else if (keycode == 2 && (v->num % 2) == 0)
+            v->odd += (v->rad / 20);
+        else if (keycode == 13 && (v->num % 2) == 0)
+            v->even += (v->rad / 20);
+        else if (keycode == 69)
 			v->rad += 10;
 		else if (keycode == 78 && v->rad > 30)
 			v->rad -= 10;

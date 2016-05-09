@@ -46,6 +46,8 @@ typedef struct	s_var
 	int			bpp;
 	int			end;
 	int			rad;
+    int         odd;
+    int         even;
     double      rot;
     double      width;
     double      height;

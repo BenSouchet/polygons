@@ -46,9 +46,20 @@ static void     get_vertex(t_var *v, int i)
         y = sinf(a) * (cosf(PI / v->num) / cosf(2.0 * (PI / v->num) *
         ((a / (2.0 * (PI / v->num))) - floor(a / (2.0 * (PI / v->num)))) -
         (PI / v->num)));
-        v->pts[i][0] = (round((v->rad) * x) + (v->cx));
-        v->pts[i++][1] = (round((v->rad) * y) + (v->cy));
+        if (v->num % 2)
+        {
+            v->pts[i][0] = (round((v->rad) * x) + (v->cx));
+            v->pts[i][1] = (round((v->rad) * y) + (v->cy));
+        }
+        else
+        {
+            v->pts[i][0] = ((i + 1) % 2) ? (round(v->odd * x) + v->cx) :
+            (round(v->even * x) + v->cx);
+            v->pts[i][1] = ((i + 1) % 2) ? (round(v->odd * y) + v->cy) :
+            (round(v->even * y) + v->cy);
+        }
         a += god;
+        i++;
     }
 }
 

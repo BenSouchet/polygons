@@ -27,6 +27,8 @@ static int		error(int type)
 static int		check(t_var *v, int err)
 {
 	v->rad = 280;
+    v->odd = 280;
+    v->even = 280;
     v->width = 0;
     v->height = 0;
 	v->cx = (213.0 + ((WIN_W - 213.0) / 2.0));
