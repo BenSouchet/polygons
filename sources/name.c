@@ -111,16 +111,13 @@ char	*dispatch_num(int num)
 	str[0] = '\0';
 	if ((num > 10 && num <= 20) || num == 100)
 		str = machin_basic(num, str);
-	else
-	{
-		if (num > 99)
-			str = machin_sup_triple(number, str, 0);
-		else if (num == 10 || num > 20)
-			str = machin_sup_double(number, str, 0);
-		else if (num > 0)
-			str = machin_sup_simple(number, str, 0);
-		free(number);
-	}
+	else if (num > 99)
+		str = machin_sup_triple(number, str, 0);
+	else if (num == 10 || num > 20)
+		str = machin_sup_double(number, str, 0);
+	else if (num > 0)
+	    str = machin_sup_simple(number, str, 0);
+    free(number);
 	if (str[0] >= 97 && str[0] <= 122)
 		str[0] -= 32;
 	return (str);

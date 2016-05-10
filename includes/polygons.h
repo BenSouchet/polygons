@@ -37,6 +37,7 @@ typedef struct	s_var
 {
 	int			x;
 	int			y;
+    int         r;
     double      a;
 	double		cx;
 	double		cy;
@@ -49,8 +50,10 @@ typedef struct	s_var
 	int			end;
 	int			rad;
     int         odd;
+    int         tmp;
     int         even;
     int         full;
+    int         thickness;
     double      rot;
     double      width;
     double      height;

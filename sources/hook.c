@@ -50,9 +50,9 @@ int				key_hook(int keycode, t_var *v)
 			v->rad += 10;
 		else if (keycode == 78 && v->rad > 30)
 			v->rad -= 10;
-        else if (keycode == 82 && v->full == 1)
+        else if ((keycode == 257 || keycode == 258) && v->full == 1)
             v->full = 0;
-        else if (keycode == 83 && v->full == 0)
+        else if ((keycode == 257 || keycode == 258) && v->full == 0)
             v->full = 1;
 		else if (keycode == 121 && v->num < 360)
 			v->num++;

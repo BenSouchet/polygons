@@ -14,7 +14,7 @@ C = clang
 
 NAME = polygons
 
-FLAGS = -g
+FLAGS = -Wall -Wextra -Werror -O3
 
 LIBFT = libft
 
@@ -29,8 +29,8 @@ HEADERS = includes
 SOURCES = main.c \
 		  hook.c \
 		  draw.c \
-		  name.c \
-		  misc.c
+		  poly.c \
+		  name.c
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 
