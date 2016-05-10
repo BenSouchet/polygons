@@ -53,8 +53,8 @@ void	draw_line(t_var *v, int x, int y)
 
 t_var	*user_interface(t_var *v, int type)
 {
-	v->len = WIN_W - 50 -
-	ft_strlen(ft_strjoin("Name : ", dispatch_num(v->num))) * 10;
+	//v->len = WIN_W - 50 -
+	//ft_strlen(ft_strjoin("Name : ", dispatch_num(v->num))) * 10;
 	v->y = -1;
 	if (type == 1)
 		while (++v->y < WIN_H && (v->x = 214) > -1)
@@ -82,7 +82,7 @@ t_var	*user_interface(t_var *v, int type)
 
 void	user_interface_texts(t_var *v)
 {
-	v->nam = ft_strjoin("Name : ", dispatch_num(v->num));
+	//v->nam = ft_strjoin("Name : ", dispatch_num(v->num));
 	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Controls Keys");
 	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Color = C or K");
 	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Move = ^ v < >");
@@ -100,10 +100,10 @@ void	user_interface_texts(t_var *v)
 		mlx_string_put(v->mlx, v->win, 37, 349, UI_COLOR, "Next = PAGE DW");
 	else
 		mlx_string_put(v->mlx, v->win, 37, 349, UI2_COLOR, "Next = PAGE DW");
-	mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);
+	//mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);
     free(v->nam);
-	mlx_string_put(v->mlx, v->win, 37, (WIN_H - 55), UI_COLOR,
-	ft_strjoin("Sides : ", ft_itoa(v->num)));
+	//mlx_string_put(v->mlx, v->win, 37, (WIN_H - 55), UI_COLOR,
+	//ft_strjoin("Sides : ", ft_itoa(v->num)));
 }
 
 void	mlx_draw(t_var *v, int x, int y)

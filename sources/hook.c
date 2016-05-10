@@ -18,7 +18,10 @@ int				expose_hook(t_var *v)
 	v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	v = user_interface(v, 1);
-	draw_polygon(v);
+	if (v->full == 1)
+        draw_full_polygon(v);
+    else
+        draw_edge_polygon(v);
 	v = user_interface(v, 2);
 	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
 	user_interface_texts(v);
@@ -35,18 +38,22 @@ int				key_hook(int keycode, t_var *v)
 	}
 	else
 	{
-        if (keycode == 0 && (v->num % 2) == 0 && v->odd > (v->rad / 20))
-            v->odd -= (v->rad / 20);
-        else if (keycode == 1 && (v->num % 2) == 0 && v->even > (v->rad / 20))
-            v->even -= (v->rad / 20);
-        else if (keycode == 2 && (v->num % 2) == 0)
-            v->odd += (v->rad / 20);
-        else if (keycode == 13 && (v->num % 2) == 0)
-            v->even += (v->rad / 20);
+        if (keycode == 0)
+            v->odd -= 10;
+        else if (keycode == 1)
+            v->even -= 10;
+        else if (keycode == 2)
+            v->odd += 10;
+        else if (keycode == 13)
+            v->even += 10;
         else if (keycode == 69)
 			v->rad += 10;
 		else if (keycode == 78 && v->rad > 30)
 			v->rad -= 10;
+        else if (keycode == 82 && v->full == 1)
+            v->full = 0;
+        else if (keycode == 83 && v->full == 0)
+            v->full = 1;
 		else if (keycode == 121 && v->num < 360)
 			v->num++;
 		else if (keycode == 71 && (v->rad = 280) == 280)

@@ -27,8 +27,9 @@ static int		error(int type)
 static int		check(t_var *v, int err)
 {
 	v->rad = 280;
-    v->odd = 280;
-    v->even = 280;
+    v->odd = 0;
+    v->even = 0;
+    v->full = 0;
     v->width = 0;
     v->height = 0;
 	v->cx = (213.0 + ((WIN_W - 213.0) / 2.0));
@@ -48,9 +49,7 @@ static int		init_win(t_var v)
 {
 	v.mlx = mlx_init();
 	v.num = (v.nbr == 2) ? ft_atoi(v.ftl[1]) : 1;
-    v.img = mlx_new_image(v.mlx, WIN_W, WIN_H);
 	v.win = mlx_new_window(v.mlx, -1, -1, WIN_W, WIN_H, "polygons - bsouchet");
-	v.d = mlx_get_data_addr(v.img, &v.bpp, &v.sl, &v.end);
 	mlx_expose_hook(v.win, expose_hook, &v);
 	mlx_hook(v.win, 17, 0, close_hook, &v);
 	mlx_hook(v.win, 2, 0, key_hook, &v);

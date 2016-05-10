@@ -37,8 +37,10 @@ typedef struct	s_var
 {
 	int			x;
 	int			y;
+    double      a;
 	double		cx;
 	double		cy;
+    double      add;
 	int			sl;
 	int			len;
 	int			nbr;
@@ -48,6 +50,7 @@ typedef struct	s_var
 	int			rad;
     int         odd;
     int         even;
+    int         full;
     double      rot;
     double      width;
     double      height;
@@ -73,6 +76,7 @@ void			mlx_draw(t_var *v, int x, int y);
 char			*dispatch_num(int num);
 
 void			draw_line(t_var *v, int x, int y);
-void			draw_polygon(t_var *v);
+void            draw_edge_polygon(t_var *v);
+void			draw_full_polygon(t_var *v);
 
 #endif
