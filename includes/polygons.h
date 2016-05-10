@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:26:10 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/05 19:17:31 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:47:11 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct	s_var
     int         **pts;
 	char		*d;
 	char		*nam;
+	char		*size;
 	char		**ftl;
 	void		*img;
 	void		*mlx;
@@ -75,7 +76,6 @@ void			mlx_draw(t_var *v, int x, int y);
 
 char			*dispatch_num(int num);
 
-void			draw_line(t_var *v, int x, int y);
 void            draw_edge_polygon(t_var *v);
 void			draw_full_polygon(t_var *v);
 

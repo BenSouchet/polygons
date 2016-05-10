@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/04 17:22:44 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:46:32 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,8 @@ int		put_pixel(t_var *v, int color, int type)
 	return (0);
 }
 
-void	draw_line(t_var *v, int x, int y)
-{
-	double	tx;
-	double	dist_x;
-	double	dist_y;
-
-	tx = 0.0;
-	dist_x = v->x - x;
-	dist_y = v->y - y;
-	while (tx <= 1.0)
-	{
-		v->x = x + (dist_x * tx);
-		v->y = y + (dist_y * tx);
-		put_pixel(v, OBJ_COLOR, 0);
-		tx += 1. / sqrt((dist_x * dist_x) + (dist_y * dist_y));
-	}
-}
-
 t_var	*user_interface(t_var *v, int type)
 {
-	//v->len = WIN_W - 50 -
-	//ft_strlen(ft_strjoin("Name : ", dispatch_num(v->num))) * 10;
 	v->y = -1;
 	if (type == 1)
 		while (++v->y < WIN_H && (v->x = 214) > -1)
@@ -65,6 +45,8 @@ t_var	*user_interface(t_var *v, int type)
 		while (++v->y < WIN_H && (v->x = 0) > -1)
 			while (v->x <= 213 && put_pixel(v, BG_COLOR, 0) == 0)
 				v->x++;
+		v->nam = ft_strjoin2("Name : ", dispatch_num(v->num), 1);
+		v->len = WIN_W - 50 - ft_strlen(v->nam) * 10;
 		v->x = 25;
 		v->y = 25;
 		mlx_draw(v, 188, 153);
@@ -82,7 +64,6 @@ t_var	*user_interface(t_var *v, int type)
 
 void	user_interface_texts(t_var *v)
 {
-	//v->nam = ft_strjoin("Name : ", dispatch_num(v->num));
 	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Controls Keys");
 	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Color = C or K");
 	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Move = ^ v < >");
@@ -100,10 +81,11 @@ void	user_interface_texts(t_var *v)
 		mlx_string_put(v->mlx, v->win, 37, 349, UI_COLOR, "Next = PAGE DW");
 	else
 		mlx_string_put(v->mlx, v->win, 37, 349, UI2_COLOR, "Next = PAGE DW");
-	//mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);
-    free(v->nam);
-	//mlx_string_put(v->mlx, v->win, 37, (WIN_H - 55), UI_COLOR,
-	//ft_strjoin("Sides : ", ft_itoa(v->num)));
+	mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);
+	free(v->nam);
+	v->size = ft_strjoin2("Sides : ", ft_itoa(v->num), 1);
+	mlx_string_put(v->mlx, v->win, 37, (WIN_H - 55), UI_COLOR, v->size);
+	free(v->size);
 }
 
 void	mlx_draw(t_var *v, int x, int y)

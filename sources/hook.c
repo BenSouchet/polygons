@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:35:58 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/05 19:30:22 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:41:57 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,14 @@ int				key_hook(int keycode, t_var *v)
             v->full = 1;
 		else if (keycode == 121 && v->num < 360)
 			v->num++;
-		else if (keycode == 71 && (v->rad = 280) == 280)
-			v->num = (v->nbr == 2) ? ft_atoi(v->ftl[1]) : 1;
+		else if (keycode == 71)
+		{
+			v->odd = 0;
+			v->even = 0;
+			v->width = 0;
+			v->height = 0;
+			v->rad = 280;
+		}
 		else if (keycode == 116 && v->num > 1)
 			v->num--;
         else if (keycode == 123 && v->width > -100)
