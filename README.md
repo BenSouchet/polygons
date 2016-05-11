@@ -93,7 +93,7 @@ Exemple :
 </tr>
 <tr>
 <td valign="top" height="30px">Next polygon</td>
-<td valign="top" align="center"><kbd><center>&nbsp;page &nbsp;&nbsp;up</center></kbd></td>
+<td valign="top" align="center"><kbd><center>&nbsp;page &nbsp;up</center></kbd></td>
 </tr>
 </tbody>
 </table>
