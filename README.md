@@ -68,8 +68,12 @@ Exemple :
 <td valign="top" align="center"><kbd><</kbd></td>
 </tr>
 <tr>
+<td valign="top" height="30px">Fill or unfill the polygon</td>
+<td valign="top" align="center"><kbd>shift</kbd></td>
+</tr>
+<tr>
 <td valign="top" height="30px">Next polygon</td>
-<td valign="top" align="center"><kbd>page up</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;page up</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Previous polygon</td>
