@@ -44,27 +44,27 @@ Exemple :
 <td valign="top" align="center"><kbd>clear</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the global size of the polygon (aka zoom)</td>
+<td valign="top" height="30px">⌈ Increase the global size of the polygon (aka zoom)</td>
 <td valign="top" align="center"><kbd>+</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the global size of the polygon (aka unzoom)</td>
+<td valign="top" height="30px">⌊ Decrease the global size of the polygon (aka unzoom)</td>
 <td valign="top" align="center"><kbd>-</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the height of the polygon (aka height stretch)</td>
+<td valign="top" height="30px">⌈ Increase the height of the polygon (aka height stretch)</td>
 <td valign="top" align="center"><kbd>^</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the height of the polygon (aka height shrink)</td>
+<td valign="top" height="30px">⌊ Decrease the height of the polygon (aka height shrink)</td>
 <td valign="top" align="center"><kbd>v</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the width of the polygon (aka width stretch)</td>
+<td valign="top" height="30px">⌈ Increase the width of the polygon (aka width stretch)</td>
 <td valign="top" align="center"><kbd>></kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the width of the polygon (aka width shrink)</td>
+<td valign="top" height="30px">⌊ Decrease the width of the polygon (aka width shrink)</td>
 <td valign="top" align="center"><kbd><</kbd></td>
 </tr>
 <tr>
@@ -72,19 +72,19 @@ Exemple :
 <td valign="top" align="center"><kbd>shift</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the position of all odd points of the polygon</td>
+<td valign="top" height="30px">⌈ Increase the position of all odd points of the polygon</td>
 <td valign="top" align="center"><kbd>W</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the position of all odd points of the polygon</td>
+<td valign="top" height="30px">⌊ Decrease the position of all odd points of the polygon</td>
 <td valign="top" align="center"><kbd>Q</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the position of all even points of the polygon</td>
+<td valign="top" height="30px">⌈ Increase the position of all even points of the polygon</td>
 <td valign="top" align="center"><kbd>S</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the position of all even points of the polygon</td>
+<td valign="top" height="30px">⌊ Decrease the position of all even points of the polygon</td>
 <td valign="top" align="center"><kbd>A</kbd></td>
 </tr>
 <tr>
