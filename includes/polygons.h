@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:26:10 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/11 11:56:18 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/11 13:25:20 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define UI2_COLOR 0x647C15
 # define OBJ_COLOR 0x777777
 # define OBJ2_COLOR 0x373737
+# define RADIUS 280
 # define MIN_V 105
 # define MAX_V 360
 # define WIN_W 1280
@@ -52,7 +53,7 @@ typedef struct	s_var
 	int			odd;
 	int			tmp;
 	int			even;
-	int			full;
+	int			fill;
 	int			thickness;
 	double		rot;
 	double		width;
@@ -78,6 +79,8 @@ void			user_interface_texts(t_var *v);
 void			mlx_draw(t_var *v, int x, int y);
 
 char			*dispatch_num(int num);
+
+int				check_point(t_var *v, int start, int max);
 
 void			draw_edge_polygon(t_var *v);
 void			draw_full_polygon(t_var *v);

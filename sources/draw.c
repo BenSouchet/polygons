@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/11 12:09:50 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/11 13:20:07 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ t_var	*user_interface(t_var *v, int type)
 
 void	user_interface_texts(t_var *v)
 {
-	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Controls Keys");
-	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Color = C or K");
-	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Move = ^ v < >");
-	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Zoom = + and -");
+	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Generals Keys");
+	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Zoom = + and -");
+	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Edit = ^ v < >");
+	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Fill = SHIFT");
 	mlx_string_put(v->mlx, v->win, 37, 123, UI_COLOR, "Reset = CLEAR");
-	mlx_string_put(v->mlx, v->win, 37, 188, UI_COLOR, "Controls Mouse");
-	mlx_string_put(v->mlx, v->win, 37, 216, UI_COLOR, "Zoom = SCROLL");
-	mlx_string_put(v->mlx, v->win, 37, 236, UI_COLOR, "or LMB and RMB");
+	mlx_string_put(v->mlx, v->win, 37, 188, UI_COLOR, "Control Vertex");
+	mlx_string_put(v->mlx, v->win, 37, 216, UI_COLOR, "Odd  = Q and W");
+	mlx_string_put(v->mlx, v->win, 37, 236, UI_COLOR, "Even = A and S");
 	mlx_string_put(v->mlx, v->win, 41, 301, UI_COLOR, "Poly Explorer");
 	if (v->num > 1)
 		mlx_string_put(v->mlx, v->win, 37, 329, UI_COLOR, "Prev = PAGE UP");
@@ -103,4 +103,24 @@ void	mlx_draw(t_var *v, int x, int y)
 		v->x--;
 	while (v->y >= tmp2 && put_pixel(v, UI_COLOR, 0) == 0)
 		v->y--;
+}
+
+int		check_point(t_var *v, int start, int max)
+{
+	int i;
+	int j;
+	int c;
+
+	c = 0;
+	i = start;
+	j = (max - 1);
+	while (i < max)
+	{
+		if (((v->pts[i][1] >= v->y) != (v->pts[j][1] >= v->y)) &
+		(v->x <= (v->pts[j][0] - v->pts[i][0]) * (double)(v->y - v->pts[i][1]) /
+		(double)(v->pts[j][1] - v->pts[i][1]) + v->pts[i][0]))
+			c = !c;
+		j = i++;
+	}
+	return (c);
 }

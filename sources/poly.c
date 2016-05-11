@@ -6,28 +6,11 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:46:47 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/11 11:50:12 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/11 13:09:42 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "polygons.h"
-
-static int	check_point(t_var *v, int start, int max)
-{
-	int i;
-	int j;
-	int c;
-
-	c = 0;
-	for (i = start, j = (max - 1); i < max; j = i++)
-	{
-		if (((v->pts[i][1] >= v->y) != (v->pts[j][1] >= v->y)) &
-		(v->x <= (v->pts[j][0] - v->pts[i][0]) * (double)(v->y - v->pts[i][1]) /
-		(double)(v->pts[j][1] - v->pts[i][1]) + v->pts[i][0]))
-			c = !c;
-	}
-	return (c);
-}
 
 static int	odd_polygon_check(t_var *v, int test)
 {

@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:30:09 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/11 11:52:36 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/11 13:25:03 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static int		error(int type)
 
 static int		check(t_var *v, int err)
 {
-	v->rad = 280;
 	v->odd = 0;
 	v->even = 0;
-	v->full = 0;
+	v->fill = 0;
 	v->width = 0;
 	v->height = 0;
+	v->rad = RADIUS;
 	v->thickness = 2;
 	v->cx = (213.0 + ((WIN_W - 213.0) / 2.0));
 	v->cy = (35.0 + ((WIN_H - 116.0) / 2.0));
