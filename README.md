@@ -97,3 +97,6 @@ Exemple :
 </tr>
 </tbody>
 </table>
+
+## Contact & contribute
+If you want to contact me, or fix/improve Polygons, just contact me at **bsouchet@student.42.fr**
