@@ -36,6 +36,14 @@ Exemple :
 </thead>
 <tbody>
 <tr>
+<td valign="top" height="30px">Close the program (aka quit/exit)</td>
+<td valign="top" align="center"><kbd>esc</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Reset all the changes made since the beginning</td>
+<td valign="top" align="center"><kbd>clear</kbd></td>
+</tr>
+<tr>
 <td valign="top" height="30px">Increase the global size of the polygon (aka zoom)</td>
 <td valign="top" align="center"><kbd>+</kbd></td>
 </tr>
@@ -61,15 +69,11 @@ Exemple :
 </tr>
 <tr>
 <td valign="top" height="30px">Next polygon</td>
-<td valign="top" align="center"><kbd>>page up</kbd></td>
+<td valign="top" align="center"><kbd>page up</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Previous polygon</td>
 <td valign="top" align="center"><kbd>page down</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Close the program (aka quit/exit)</td>
-<td valign="top" align="center"><kbd>esc</kbd></td>
 </tr>
 </tbody>
 </table>
