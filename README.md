@@ -26,7 +26,7 @@ Exemple :
 <table width="100%">
 <thead>
 <tr>
-<td width="100%" height="60px" align="center" cellpadding="0">
+<td width="80%" height="60px" align="center" cellpadding="0">
 <strong>Description</strong>
 </td>
 <td width="100%" align="center" cellpadding="0">
