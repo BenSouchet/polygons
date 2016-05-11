@@ -89,11 +89,11 @@ Exemple :
 </tr>
 <tr>
 <td valign="top" height="30px">Clockwise rotation of the polygon</td>
-<td valign="top" align="center"><kbd>X</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;&nbsp;X&nbsp;&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Counter clockwise rotation of the polygon</td>
-<td valign="top" align="center"><kbd>Z</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;Z&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Previous polygon</td>
