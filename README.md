@@ -15,9 +15,9 @@ Some options are available:
 git clone https://github.com/Raiden-kazua/Polygons.git ~/Polygons
 cd ~/Polygons && ./Polygons
 ```
-You can also launch the program with a parameter.
-It's the number of sides you want for the polygon at the execution of the program.
-This parameter as to be between 1 and 360 included.
+You can also launch the program with a parameter.<br />
+It's the number of sides you want for the polygon at the execution of the program.<br />
+This parameter as to be between 1 and 360 included.<br />
 Exemple:
 ```bash
 ./Polygons 10
