@@ -30,7 +30,7 @@ Exemple :
 <strong>Description</strong>
 </td>
 <td width="150%" align="center" cellpadding="0">
-<strong>Key(s)</strong>
+<strong>    Key(s)    </strong>
 </td>
 </tr>
 </thead>
