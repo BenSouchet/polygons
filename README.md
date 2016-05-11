@@ -26,9 +26,11 @@ Exemple :
 <table width="100%">
 <thead>
 <tr>
-<td width="70%" height="60px"></td>
+<td width="70%" height="60px" align="center" cellpadding="0">
+<strong>Description</strong>
+</td>
 <td width="30%" align="center" cellpadding="0">
-<strong>libft</strong>
+<strong>Key(s) shortcut</strong>
 </td>
 </tr>
 </thead>
