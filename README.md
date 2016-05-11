@@ -60,6 +60,14 @@ Exemple :
 <td valign="top" align="center"><kbd><</kbd></td>
 </tr>
 <tr>
+<td valign="top" height="30px">Next polygon</td>
+<td valign="top" align="center"><kbd>>page up</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Previous polygon</td>
+<td valign="top" align="center"><kbd>page down</kbd></td>
+</tr>
+<tr>
 <td valign="top" height="30px">Close the program (aka quit/exit)</td>
 <td valign="top" align="center"><kbd>esc</kbd></td>
 </tr>
