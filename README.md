@@ -20,3 +20,18 @@ Exemple :
 ```bash
 ./Polygons 10
 ```
+
+## Keyboard shortcuts
+
+<table width="100%">
+<thead>
+<tr>
+<td width="70%" height="60px"></td>
+<td width="30%" align="center" cellpadding="0">
+<strong>libft</strong>
+</td>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
