@@ -2,7 +2,7 @@
 
 Polygons is a tiny C program developped in my free time at 42 school for generating all polygons from 1 to 360 sides.
 <img align="center" src="http://i.imgur.com/y2sxbI0.png" width="100%" />
-Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Polygons/blob/master/README.md#keyboard-shortcuts) section for more infos):
+Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Polygons/blob/master/README.md#keyboard-shortcuts) section for more infos) :
 * Zoom and unzoom
 * Rotate the polygon (in progress)
 * Edit the shape of the polygon
@@ -13,12 +13,12 @@ Several options are available (see [Keyboard shortcuts](https://github.com/Raide
 ## Install & launch
 ```bash
 git clone https://github.com/Raiden-kazua/Polygons.git ~/Polygons
-cd ~/Polygons && ./Polygons
+cd ~/Polygons && ./polygons
 ```
 You can also launch the program with a parameter. It's the number of sides you want for the polygon at the execution of the program. This parameter as to be between 1 and 360 included.<br />
 Exemple :
 ```bash
-./Polygons 10
+./polygons 10
 ```
 
 ## Keyboard shortcuts
