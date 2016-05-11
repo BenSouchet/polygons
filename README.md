@@ -2,7 +2,7 @@
 
 Polygons is a tiny C program developped in my free time at 42 school for generating all polygons from 1 to 360 sides.
 
-Some options are available:
+Several options are available (see Keyboard shortcuts section for more infos):
 * Zoom and unzoom
 * Rotate the polygon
 * Edit the shape of the polygon
