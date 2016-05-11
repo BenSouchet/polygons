@@ -88,12 +88,12 @@ Exemple :
 <td valign="top" align="center"><kbd>A</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Next polygon</td>
-<td valign="top" align="center"><kbd><center>&nbsp;page up</center></kbd></td>
-</tr>
-<tr>
 <td valign="top" height="30px">Previous polygon</td>
 <td valign="top" align="center"><kbd>page down</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Next polygon</td>
+<td valign="top" align="center"><kbd><center>&nbsp;page up</center></kbd></td>
 </tr>
 </tbody>
 </table>
