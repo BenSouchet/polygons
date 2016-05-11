@@ -36,12 +36,32 @@ Exemple :
 </thead>
 <tbody>
 <tr>
-<td valign="top" height="30px">Increase the size of the polygone (aka zoom)</td>
+<td valign="top" height="30px">Increase the global size of the polygon (aka zoom)</td>
 <td valign="top" align="center"><kbd>+</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the size of the polygone (aka unzoom)</td>
+<td valign="top" height="30px">Decrease the global size of the polygon (aka unzoom)</td>
 <td valign="top" align="center"><kbd>-</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Increase the height of the polygon (aka height stretch)</td>
+<td valign="top" align="center"><kbd>^</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Decrease the height of the polygon (aka height shrink)</td>
+<td valign="top" align="center"><kbd>v</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Increase the width of the polygon (aka width stretch)</td>
+<td valign="top" align="center"><kbd>></kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Decrease the width of the polygon (aka width shrink)</td>
+<td valign="top" align="center"><kbd><</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Close the program (aka quit/exit)</td>
+<td valign="top" align="center"><kbd>esc</kbd></td>
 </tr>
 </tbody>
 </table>
