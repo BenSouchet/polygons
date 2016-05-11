@@ -37,59 +37,59 @@ Exemple :
 <tbody>
 <tr>
 <td valign="top" height="30px">Close the program (aka quit/exit)</td>
-<td valign="top" align="center"><kbd>esc</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;esc&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Reset all the changes made since the beginning</td>
-<td valign="top" align="center"><kbd>clear</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;clear&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the global size of the polygon (aka zoom)</td>
-<td valign="top" align="center"><kbd>+</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the global size of the polygon (aka unzoom)</td>
-<td valign="top" align="center"><kbd>-</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;-&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the height of the polygon (aka height stretch)</td>
-<td valign="top" align="center"><kbd>^</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;^&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the height of the polygon (aka height shrink)</td>
-<td valign="top" align="center"><kbd>v</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;v&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the width of the polygon (aka width stretch)</td>
-<td valign="top" align="center"><kbd>></kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;>&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the width of the polygon (aka width shrink)</td>
-<td valign="top" align="center"><kbd><</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;<&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Fill or unfill the polygon</td>
-<td valign="top" align="center"><kbd>shift</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;shift&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the position of all odd points of the polygon</td>
-<td valign="top" align="center"><kbd>W</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;W&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the position of all odd points of the polygon</td>
-<td valign="top" align="center"><kbd>Q</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;Q&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the position of all even points of the polygon</td>
-<td valign="top" align="center"><kbd>S</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;S&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the position of all even points of the polygon</td>
-<td valign="top" align="center"><kbd>A</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;A&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Clockwise rotation of the polygon</td>
-<td valign="top" align="center"><kbd>&nbsp;&nbsp;X&nbsp;&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;X&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Counter clockwise rotation of the polygon</td>
