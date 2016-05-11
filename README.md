@@ -44,7 +44,7 @@ Exemple :
 <td valign="top" align="center"><kbd>clear</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">⌈ Increase the global size of the polygon (aka zoom)</td>
+<td valign="top" height="30px">Increase the global size of the polygon (aka zoom)</td>
 <td valign="top" align="center"><kbd>+</kbd></td>
 </tr>
 <tr>
