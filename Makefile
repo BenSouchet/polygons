@@ -24,7 +24,7 @@ DIR_O = temporary
 
 DIR_MLX = libmlx
 
-HEADERS = includes
+HEADERS = include
 
 SOURCES = main.c \
 		  hook.c \
