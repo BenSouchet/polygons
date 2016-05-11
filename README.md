@@ -26,10 +26,10 @@ Exemple :
 <table width="100%">
 <thead>
 <tr>
-<td width="70%" height="60px" align="center" cellpadding="0">
+<td width="60%" height="60px" align="center" cellpadding="0">
 <strong>Description</strong>
 </td>
-<td width="30%" align="center" cellpadding="0">
+<td width="40%" align="center" cellpadding="0">
 <strong>Key(s) shortcut</strong>
 </td>
 </tr>
