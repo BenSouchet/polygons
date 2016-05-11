@@ -39,5 +39,9 @@ Exemple :
 <td valign="top" height="30px">Increase the size of the polygone (aka zoom)</td>
 <td valign="top" align="center"><kbd>+</kbd></td>
 </tr>
+<tr>
+<td valign="top" height="30px">Decrease the size of the polygone (aka unzoom)</td>
+<td valign="top" align="center"><kbd>-</kbd></td>
+</tr>
 </tbody>
 </table>
