@@ -14,7 +14,6 @@
 
 int				expose_hook(t_var *v)
 {
-	v->rot = (v->num % 2) ? -90.0 : 0.0;
 	v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	v = user_interface(v, 1);
@@ -30,10 +29,10 @@ int				expose_hook(t_var *v)
 
 static t_var	*keys_zero_to_eighty(t_var *v, int keycode)
 {
-	if (keycode == 0)
-		v->even -= 10;
-	else if (keycode == 1)
-		v->even += 10;
+    if (keycode == 6)
+        v->rot -= 5;
+    else if (keycode == 7)
+        v->rot += 5;
 	else if (keycode == 12)
 		v->odd -= 10;
 	else if (keycode == 13)
@@ -50,13 +49,18 @@ static t_var	*keys_zero_to_eighty(t_var *v, int keycode)
 		v->width = 0;
 		v->height = 0;
 		v->rad = 280;
+        v->rot = (v->num % 2) ? -90.0 : 0.0;
 	}
 	return (v);
 }
 
 static t_var	*keys_ninety_to_end(t_var *v, int keycode)
 {
-	if ((keycode == 257 || keycode == 258) && v->fill == 1)
+    if (keycode == 0)
+        v->even -= 10;
+    else if (keycode == 1)
+        v->even += 10;
+    else if ((keycode == 257 || keycode == 258) && v->fill == 1)
 		v->fill = 0;
 	else if ((keycode == 257 || keycode == 258) && v->fill == 0)
 		v->fill = 1;
@@ -85,9 +89,9 @@ int				key_hook(int keycode, t_var *v)
 	}
 	else
 	{
-		if (keycode >= 0 && keycode < 80)
+		if (keycode >= 2 && keycode < 80)
 			v = keys_zero_to_eighty(v, keycode);
-		else if (keycode > 90)
+		else if (keycode < 2 || keycode > 90)
 			v = keys_ninety_to_end(v, keycode);
 		mlx_destroy_image(v->mlx, v->img);
 		mlx_clear_window(v->mlx, v->win);

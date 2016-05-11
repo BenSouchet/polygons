@@ -49,6 +49,7 @@ static int		check(t_var *v, int err)
 static int		init_win(t_var v)
 {
 	v.mlx = mlx_init();
+    v.rot = (v.num % 2) ? -90.0 : 0.0;
 	v.num = (v.nbr == 2) ? ft_atoi(v.ftl[1]) : 1;
 	v.win = mlx_new_window(v.mlx, -1, -1, WIN_W, WIN_H, "Polygons - bsouchet");
 	mlx_expose_hook(v.win, expose_hook, &v);

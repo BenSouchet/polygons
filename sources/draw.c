@@ -49,11 +49,11 @@ t_var	*user_interface(t_var *v, int type)
 		v->len = WIN_W - 50 - ft_strlen(v->nam) * 10;
 		v->x = 25;
 		v->y = 25;
-		mlx_draw(v, 188, 153);
-		v->y = 178;
-		mlx_draw(v, 188, 266);
-		v->y = 291;
-		mlx_draw(v, 188, 379);
+		mlx_draw(v, 188, 173);
+		v->y = 198;
+		mlx_draw(v, 188, 286);
+		v->y = 311;
+		mlx_draw(v, 188, 399);
 		v->y = (WIN_H - 65);
 		mlx_draw(v, 188, (WIN_H - 25));
 		v->x = v->len - 1;
@@ -67,20 +67,21 @@ void	user_interface_texts(t_var *v)
 	mlx_string_put(v->mlx, v->win, 41, 35, UI_COLOR, "Generals Keys");
 	mlx_string_put(v->mlx, v->win, 37, 63, UI_COLOR, "Zoom = + and -");
 	mlx_string_put(v->mlx, v->win, 37, 83, UI_COLOR, "Edit = ^ v < >");
-	mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Fill = SHIFT");
-	mlx_string_put(v->mlx, v->win, 37, 123, UI_COLOR, "Reset = CLEAR");
-	mlx_string_put(v->mlx, v->win, 37, 188, UI_COLOR, "Control Vertex");
-	mlx_string_put(v->mlx, v->win, 37, 216, UI_COLOR, "Odd  = Q and W");
-	mlx_string_put(v->mlx, v->win, 37, 236, UI_COLOR, "Even = A and S");
-	mlx_string_put(v->mlx, v->win, 41, 301, UI_COLOR, "Poly Explorer");
+    mlx_string_put(v->mlx, v->win, 37, 103, UI_COLOR, "Rot8 = X and Z");
+	mlx_string_put(v->mlx, v->win, 37, 123, UI_COLOR, "Fill = SHIFT");
+	mlx_string_put(v->mlx, v->win, 37, 143, UI_COLOR, "Reset = CLEAR");
+	mlx_string_put(v->mlx, v->win, 37, 208, UI_COLOR, "Control Vertex");
+	mlx_string_put(v->mlx, v->win, 37, 236, UI_COLOR, "Odd  = W and Q");
+	mlx_string_put(v->mlx, v->win, 37, 256, UI_COLOR, "Even = S and A");
+	mlx_string_put(v->mlx, v->win, 41, 321, UI_COLOR, "Poly Explorer");
 	if (v->num > 1)
-		mlx_string_put(v->mlx, v->win, 37, 329, UI_COLOR, "Prev = PAGE UP");
+		mlx_string_put(v->mlx, v->win, 37, 349, UI_COLOR, "Prev = PAGE UP");
 	else
-		mlx_string_put(v->mlx, v->win, 37, 329, UI2_COLOR, "Prev = PAGE UP");
+		mlx_string_put(v->mlx, v->win, 37, 349, UI2_COLOR, "Prev = PAGE UP");
 	if (v->num < MAX_V)
-		mlx_string_put(v->mlx, v->win, 37, 349, UI_COLOR, "Next = PAGE DW");
+		mlx_string_put(v->mlx, v->win, 37, 369, UI_COLOR, "Next = PAGE DW");
 	else
-		mlx_string_put(v->mlx, v->win, 37, 349, UI2_COLOR, "Next = PAGE DW");
+		mlx_string_put(v->mlx, v->win, 37, 369, UI2_COLOR, "Next = PAGE DW");
 	mlx_string_put(v->mlx, v->win, v->len + 11, (WIN_H - 55), UI_COLOR, v->nam);
 	free(v->nam);
 	v->size = ft_strjoin("Sides : ", ft_itoa(v->num), 1);
