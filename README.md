@@ -53,19 +53,19 @@ Exemple :
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the height of the polygon (aka height stretch)</td>
-<td valign="top" align="center"><kbd>&nbsp;^&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;▲&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the height of the polygon (aka height shrink)</td>
-<td valign="top" align="center"><kbd>&nbsp;v&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;▼&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the width of the polygon (aka width stretch)</td>
-<td valign="top" align="center"><kbd>&nbsp;>&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease the width of the polygon (aka width shrink)</td>
-<td valign="top" align="center"><kbd>&nbsp;<&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Fill or unfill the polygon</td>
