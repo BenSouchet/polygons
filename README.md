@@ -35,5 +35,9 @@ Exemple :
 </tr>
 </thead>
 <tbody>
+<tr>
+<td valign="top" height="60px">auteur</td>
+<td valign="top" align="center"><kbd>Yes</kbd></td>
+</tr>
 </tbody>
 </table>
