@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:26:10 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/10 15:47:11 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:56:18 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ typedef struct	s_var
 {
 	int			x;
 	int			y;
-    int         r;
-    double      a;
+	int			r;
+	double		a;
 	double		cx;
 	double		cy;
-    double      add;
+	double		add;
 	int			sl;
 	int			len;
 	int			nbr;
@@ -49,15 +49,15 @@ typedef struct	s_var
 	int			bpp;
 	int			end;
 	int			rad;
-    int         odd;
-    int         tmp;
-    int         even;
-    int         full;
-    int         thickness;
-    double      rot;
-    double      width;
-    double      height;
-    int         **pts;
+	int			odd;
+	int			tmp;
+	int			even;
+	int			full;
+	int			thickness;
+	double		rot;
+	double		width;
+	double		height;
+	int			**pts;
 	char		*d;
 	char		*nam;
 	char		*size;
@@ -79,7 +79,7 @@ void			mlx_draw(t_var *v, int x, int y);
 
 char			*dispatch_num(int num);
 
-void            draw_edge_polygon(t_var *v);
+void			draw_edge_polygon(t_var *v);
 void			draw_full_polygon(t_var *v);
 
 #endif

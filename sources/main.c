@@ -6,7 +6,7 @@
 /*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 17:30:09 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/05/04 18:06:36 by bsouchet         ###   ########.fr       */
+/*   Updated: 2016/05/11 11:52:36 by bsouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ static int		error(int type)
 static int		check(t_var *v, int err)
 {
 	v->rad = 280;
-    v->odd = 0;
-    v->even = 0;
-    v->full = 0;
-    v->width = 0;
-    v->height = 0;
-    v->thickness = 2;
+	v->odd = 0;
+	v->even = 0;
+	v->full = 0;
+	v->width = 0;
+	v->height = 0;
+	v->thickness = 2;
 	v->cx = (213.0 + ((WIN_W - 213.0) / 2.0));
 	v->cy = (35.0 + ((WIN_H - 116.0) / 2.0));
 	if (v->nbr == 1 || (v->nbr == 2 && ft_atoi(v->ftl[1]) > 0 &&
-		ft_atoi(v->ftl[1]) < 361))
+	ft_atoi(v->ftl[1]) < 361))
 		;
 	else if (v->nbr == 2 && (v->ftl[1][0] < 48 || v->ftl[1][0] > 57)
-		&& ++err > 0)
+	&& ++err > 0)
 		error(0);
 	else if (++err > 0)
 		error(2);
