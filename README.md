@@ -72,6 +72,22 @@ Exemple :
 <td valign="top" align="center"><kbd>shift</kbd></td>
 </tr>
 <tr>
+<td valign="top" height="30px">Increase the position of all odd points of the polygon</td>
+<td valign="top" align="center"><kbd>W</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Decrease the position of all odd points of the polygon</td>
+<td valign="top" align="center"><kbd>Q</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Increase the position of all even points of the polygon</td>
+<td valign="top" align="center"><kbd>S</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Decrease the position of all even points of the polygon</td>
+<td valign="top" align="center"><kbd>A</kbd></td>
+</tr>
+<tr>
 <td valign="top" height="30px">Next polygon</td>
 <td valign="top" align="center"><kbd><center>&nbsp;page up</center></kbd></td>
 </tr>
