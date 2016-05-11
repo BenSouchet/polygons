@@ -10,7 +10,7 @@ Some options are available:
 * Choose from edge or fill for the display of the poly
 * Navigate between polygons with 1 to 360 sides
 
-## install & launch
+## Install & launch
 ```bash
 git clone https://github.com/Raiden-kazua/Polygons.git ~/Polygons
 cd ~/Polygons && ./Polygons
