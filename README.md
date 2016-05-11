@@ -29,7 +29,7 @@ Exemple :
 <td width="90%" height="60px" align="center" cellpadding="0">
 <strong>Description</strong>
 </td>
-<td width="150%" align="center" cellpadding="0">
+<td width="250%" align="center" cellpadding="0">
 <strong>    Key(s)    </strong>
 </td>
 </tr>
