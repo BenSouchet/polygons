@@ -36,8 +36,8 @@ Exemple :
 </thead>
 <tbody>
 <tr>
-<td valign="top" height="60px">auteur</td>
-<td valign="top" align="center"><kbd>Yes</kbd></td>
+<td valign="top" height="30px">Increase the size of the polygone (aka zoom)</td>
+<td valign="top" align="center"><kbd>+</kbd></td>
 </tr>
 </tbody>
 </table>
