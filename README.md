@@ -1,7 +1,7 @@
 # Polygons
 
 Polygons is a tiny C program developped in my free time at 42 school for generating all polygons from 1 to 360 sides.
-
+<img align="center"  src="http://i.imgur.com/y2sxbI0.png" width="100%" />
 Several options are available (see Keyboard shortcuts section for more infos):
 * Zoom and unzoom
 * Rotate the polygon
