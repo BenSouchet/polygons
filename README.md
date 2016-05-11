@@ -4,7 +4,7 @@ Polygons is a tiny C program developped in my free time at 42 school for generat
 <img align="center" src="http://i.imgur.com/y2sxbI0.png" width="100%" />
 Several options are available (see [Keyboard shortcuts](https://github.com/Raiden-kazua/Polygons/blob/master/README.md#keyboard-shortcuts) section for more infos):
 * Zoom and unzoom
-* Rotate the polygon
+* Rotate the polygon (in progress)
 * Edit the shape of the polygon
 * Edit the position of all odd and/or even vertex
 * Choose from edge or fill for the display of the poly
